@@ -22,4 +22,8 @@ public class TasksRepository{
         }
         return null;
     }
+
+    public List<Tasks> findAll() {
+        return TASKS_LIST;
+    }
 }
