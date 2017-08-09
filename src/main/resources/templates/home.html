@@ -2,9 +2,29 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8"/>
-    <title>Title</title>
+    <title> Tasks | Home </title>
 </head>
 <body>
-    <h1>Thymeleaf render, please</h1>
+
+    <h1> Tasks List </h1>
+    <table>
+        <thead>
+        <tr>
+            <th> ID </th>
+            <th> Name </th>
+            <th> Description </th>
+        </tr>
+        </thead>
+
+        <tbody>
+        <tr th:each="tasks : ${taskslist}">
+            <td th:text="${tasks.id}"> Id </td>
+            <td th:text="${tasks.name}"> Name </td>
+            <td th:text="${tasks.description}"> Description </td>
+        </tr>
+        </tbody>
+    </table>
+
+
 </body>
 </html>
