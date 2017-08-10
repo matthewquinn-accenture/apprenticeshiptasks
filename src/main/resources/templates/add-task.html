@@ -5,17 +5,17 @@
     <title>Title</title>
 </head>
 <body>
- <form th:action="post">
+ <form th:object="${task}" th:action="@{/task}" method="post">
      <label>ID</label>
-     <input type="text" />
+     <input type="text" th:field="*{id}"/>
 
      <label>Name</label>
-     <input type="text" />
+     <input type="text" th:field="*{name}"/>
 
      <label>Description</label>
-     <input type="text" />
+     <input type="text" th:field="*{description}"/>
 
-     <button>Submit</button>
+     <button type="submit">Submit</button>
  </form>
 </body>
 </html>

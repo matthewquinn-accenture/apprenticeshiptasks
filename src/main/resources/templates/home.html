@@ -27,6 +27,9 @@
         </tbody>
     </table>
 
+    <form th:object="${task}" th:action="@{/task/add}">
+        <button type="submit"><strong> Add Task </strong></button>
+    </form>
 
 </body>
 </html>

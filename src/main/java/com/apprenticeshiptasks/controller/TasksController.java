@@ -1,5 +1,6 @@
 package com.apprenticeshiptasks.controller;
 
+import com.apprenticeshiptasks.model.Tasks;
 import com.apprenticeshiptasks.repository.TasksRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -26,8 +27,15 @@ public class TasksController {
     }
 
     @RequestMapping("/task/add")
-    public String addTask(){
+    public String addTask(Model model){
+        model.addAttribute("task", new Tasks());
         return "add-task";
+    }
+
+    @RequestMapping("/task")
+    public String addTask(Tasks tasks){
+        tasksRepository.submit(tasks);
+        return "redirect:/";
     }
 
 }

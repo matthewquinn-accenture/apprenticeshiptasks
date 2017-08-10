@@ -29,4 +29,9 @@ public class TasksRepository{
     public void delete(long id) {
         TASKS_LIST.remove(this.findOne(id));
     }
+
+    public List<Tasks> submit(Tasks tasks){
+        TASKS_LIST.add(tasks);
+        return TASKS_LIST;
+    }
 }

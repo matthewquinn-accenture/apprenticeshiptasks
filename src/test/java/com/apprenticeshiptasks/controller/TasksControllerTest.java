@@ -1,5 +1,6 @@
 package com.apprenticeshiptasks.controller;
 
+import com.apprenticeshiptasks.model.Tasks;
 import com.apprenticeshiptasks.repository.TasksRepository;
 import org.junit.Before;
 import org.junit.Test;
@@ -11,7 +12,7 @@ import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 import org.springframework.web.context.WebApplicationContext;
 
-import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*;
 import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.print;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
 
@@ -54,5 +55,13 @@ public class TasksControllerTest {
                 .andDo(print())
                 .andExpect(status().isOk())
                 .andExpect(view().name("add-task"));
+    }
+
+    @Test
+    public void submitTask() throws Exception {
+        this.mockMvc.perform(post("/task"))
+                .andDo(print())
+                .andExpect(status().is(302))
+                .andExpect(redirectedUrl("/"));
     }
 }
