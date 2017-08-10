@@ -42,7 +42,7 @@ public class TasksControllerTest {
 
     @Test
     public void deleteOneTask() throws Exception {
-        this.mockMvc.perform(get("/task/delete/{id}",1))
+        this.mockMvc.perform(get("/task/delete/{id}",2))
                 .andDo(print())
                 .andExpect(status().is(302))
                 .andExpect(redirectedUrl("/"));
