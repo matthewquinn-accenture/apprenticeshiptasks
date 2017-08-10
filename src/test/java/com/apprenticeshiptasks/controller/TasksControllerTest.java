@@ -48,4 +48,11 @@ public class TasksControllerTest {
                 .andExpect(redirectedUrl("/"));
     }
 
+    @Test
+    public void addTask() throws Exception {
+        this.mockMvc.perform(get("/task/add"))
+                .andDo(print())
+                .andExpect(status().isOk())
+                .andExpect(view().name("add-task"));
+    }
 }

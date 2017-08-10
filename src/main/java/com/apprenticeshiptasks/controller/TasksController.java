@@ -25,4 +25,9 @@ public class TasksController {
         return "redirect:/";
     }
 
+    @RequestMapping("/task/add")
+    public String addTask(){
+        return "add-task";
+    }
+
 }
