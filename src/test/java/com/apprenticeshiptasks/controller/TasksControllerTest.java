@@ -40,4 +40,13 @@ public class TasksControllerTest {
                 .andExpect(model().attribute("task", tasksRepositoryMock.findOne(1)));
     }
 
+    @Test
+    public void deleteOneTask() throws Exception {
+        this.mockMvc.perform(get("/task/delete/{id}",1))
+                .andDo(print())
+                .andExpect(status().is(302))
+                .andExpect(view().name("home"))
+                .andExpect(redirectedUrl("/"));
+    }
+
 }
