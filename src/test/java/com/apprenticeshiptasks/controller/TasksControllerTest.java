@@ -45,7 +45,6 @@ public class TasksControllerTest {
         this.mockMvc.perform(get("/task/delete/{id}",1))
                 .andDo(print())
                 .andExpect(status().is(302))
-                .andExpect(view().name("home"))
                 .andExpect(redirectedUrl("/"));
     }
 

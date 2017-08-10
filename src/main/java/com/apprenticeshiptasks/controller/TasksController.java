@@ -19,4 +19,10 @@ public class TasksController {
         return "task";
     }
 
+    @RequestMapping("/task/delete/{id}")
+    public String deleteTask(@PathVariable long id){
+        tasksRepository.delete(id);
+        return "redirect:/";
+    }
+
 }
