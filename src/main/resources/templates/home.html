@@ -1,20 +1,41 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html lang="en" xmlns:th="http://www.thymeleaf.org" style="width: 1260px; margin: 0 auto">
 <head>
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
     <meta charset="UTF-8"/>
+
     <title> Tasks | Home </title>
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+          integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+          crossorigin="anonymous" />
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+            integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+            crossorigin="anonymous"></script>
 </head>
 <body>
 
-    <h1> Tasks List </h1>
-    <table>
+    <!-- Header format -->
+    <div class="jumbotron" style="border: #F9A603 solid 1px; height: 10%; margin: 1% 0; background-color: #F7EFE2">
+        <div class="container">
+            <h1 style="text-align: center; padding: 0px; margin: 0px; color: #F25C00; font-size: 100px;"> Tasks List </h1>
+        </div>
+    </div>
+
+    <!-- Table Format -->
+    <table class="table" style="margin: 0; border: 1px solid; border-color:#F9A603">
         <thead>
         <tr>
-            <th> ID </th>
-            <th> Name </th>
-            <th> Description </th>
-            <th> Delete </th>
-            <th> View </th>
+            <th style="border: 1px solid; border-color:#F9A603; color: #F25C00;"><strong> Id </strong> </th>
+            <th style="border: 1px solid; border-color:#F9A603; color: #F25C00;"><strong> Name </strong> </th>
+            <th style="border: 1px solid; border-color:#F9A603; color: #F25C00;"><strong> Description </strong> </th>
+            <th style="border: 1px solid; border-color:#F9A603; color: #F25C00;"><strong> Delete </strong> </th>
+            <th style="border: 1px solid; border-color:#F9A603; color: #F25C00;"><strong> View </strong> </th>
         </tr>
         </thead>
 
@@ -29,8 +50,9 @@
         </tbody>
     </table>
 
-    <form th:object="${task}" th:action="@{/task/add}">
-        <button type="submit"><strong> Add Task </strong></button>
+    <!-- Add Task Button -->
+    <form class="form-inline" th:object="${task}" th:action="@{/task/add}">
+        <button type="submit" class="btn btn-default btn-lg" style="border-radius: 0px; border: solid 1px; color: #F7EFE2; background-color: #F25C00; margin: 1% 0"> <strong> Add Task </strong></button>
     </form>
 
 </body>
